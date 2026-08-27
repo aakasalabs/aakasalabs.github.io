@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["WWSJ53D2A6.com.aakasalabs.omw2"],
+        "components": [{ "/": "/j/*", "comment": "an invite" }]
+      }
+    ]
+  },
+  "webcredentials": { "apps": [] },
+  "appclips": { "apps": [] }
+}

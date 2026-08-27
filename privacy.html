@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OMW — Privacy Policy</title>
+<style>
+  :root { --bg:#ffffff; --ink:#14161d; --ink2:#4a4d5c; --rule:rgba(20,22,29,.12); --accent:#4d5ce0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#05060a; --ink:#f5f6f7; --ink2:rgba(245,246,247,.66); --rule:rgba(255,255,255,.12); --accent:#7c8cff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.25rem 5rem; }
+  h1 { font-size:1.9rem; line-height:1.15; margin:0 0 .35rem; letter-spacing:-.02em; }
+  h2 { font-size:1.12rem; margin:2.4rem 0 .6rem; letter-spacing:-.01em; }
+  p, li { color:var(--ink2); }
+  p { margin:0 0 .9rem; }
+  ul { margin:0 0 .9rem; padding-left:1.15rem; }
+  li { margin-bottom:.4rem; }
+  .date { color:var(--ink2); font-size:.9rem; margin:0 0 2rem; }
+  strong { color:var(--ink); font-weight:600; }
+  a { color:var(--accent); }
+  table { border-collapse:collapse; width:100%; margin:0 0 .9rem; font-size:.94rem; }
+  th, td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid var(--rule); color:var(--ink2); vertical-align:top; }
+  th { color:var(--ink); font-weight:600; }
+  .wrap { overflow-x:auto; }
+  footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule); font-size:.9rem; color:var(--ink2); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>OMW — Privacy Policy</h1>
+<p class="date">Last updated 25 August 2026 · Aakasa Labs</p>
+
+<p>OMW shows a group travelling to one place where each other are, so nobody has to ask. This
+policy says exactly what that costs in data. It is short because the app collects little.</p>
+
+<h2>What we collect, and why</h2>
+<div class="wrap">
+<table>
+  <tr><th>Data</th><th>Why</th><th>Kept</th></tr>
+  <tr><td>Email address</td><td>It is the whole account. There is no password.</td><td>Until you delete the account</td></tr>
+  <tr><td>Display name</td><td>Shown to the people on your trip, on the map and on the roster.</td><td>Until you delete the account</td></tr>
+  <tr><td>Username</td><td>So friends can find you. Optional to use, and you choose it.</td><td>Until you delete the account</td></tr>
+  <tr><td>Precise location</td><td>Your position and ETA, shown only to people on the same trip.</td><td><strong>Deleted one hour after the last person arrives</strong></td></tr>
+  <tr><td>Trip details you type</td><td>The trip's name and where it is going.</td><td>Until the trip is deleted or the account is</td></tr>
+  <tr><td>Feedback you send</td><td>To answer you and fix what you reported.</td><td>180 days</td></tr>
+</table>
+</div>
+
+<h2>Location, specifically</h2>
+<ul>
+  <li>It is sent <strong>only while a trip is running and only after you say you are coming</strong>. It stops on its own when you arrive.</li>
+  <li>It continues while the app is in the background, because you will be following a navigation app rather than this one. iOS shows the location indicator and Android shows a notification the whole time.</li>
+  <li><strong>Your position is replaced as you move, not added to.</strong> We keep one coordinate per person per trip, so there is no history to hand over, sell or lose.</li>
+  <li>Every coordinate and route is deleted an hour after the last person arrives. What remains is the trip itself — its name, where it was going, who was on it and when they got there.</li>
+  <li>Nothing is sent when no trip is running.</li>
+</ul>
+
+<h2>Who can see it</h2>
+<p>Only people on the same trip who have answered the invitation. Opening an invite link shows
+you nothing until you reply. Joining, answering, arriving and leaving are recorded and shown to
+everyone on that trip — names and times only, never positions — so nobody can watch a group and
+then erase that they were there.</p>
+
+<h2>Who else processes it</h2>
+<ul>
+  <li><strong>Supabase</strong> — hosts the database and sends your sign-in code.</li>
+  <li><strong>Google Maps, Places and Routes</strong> — the map, place search and drive times.</li>
+  <li><strong>Apple and Google push services</strong> — delivering notifications to your device.</li>
+</ul>
+<p>They process this data to run the app and nothing else. <strong>We do not sell your data, do
+not share it for advertising, and there is no analytics or tracking SDK in the app.</strong> The
+iOS privacy manifest declares OMW as not tracking.</p>
+
+<h2>What we never collect</h2>
+<p>No contacts or address book, no phone number, no photos, no browsing history, no advertising
+identifier. Your email is never searchable and never shown to other users. A home address you
+save stays on your device and is never uploaded.</p>
+
+<h2>Deleting everything</h2>
+<p>In the app: <strong>You → Account → Delete my account</strong>. It removes your email, name,
+username, every position, the trips you host and your seat on everyone else's — on the server and
+on the device. It cannot be undone. You can also stop sharing at any point during a trip without
+leaving it.</p>
+
+<h2>Children</h2>
+<p>OMW is not directed at children under 13 and we do not knowingly collect their data.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes materially, the date above changes and the app's Privacy screen is
+updated in the same release.</p>
+
+<h2>Contact</h2>
+<p>Questions, or a request about your data: <a href="mailto:aakasalabs@gmail.com">aakasalabs@gmail.com</a>.
+We answer within a few days.</p>
+
+<footer>OMW is made by Aakasa Labs. <a href="./">Support</a></footer>
+
+</main>
+</body>
+</html>

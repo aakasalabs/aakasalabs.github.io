@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OMW — Join a trip</title>
+<style>
+  :root { --bg:#ffffff; --ink:#14161d; --ink2:#4a4d5c; --rule:rgba(20,22,29,.12); --accent:#4d5ce0; --card:#f6f6f9; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#05060a; --ink:#f5f6f7; --ink2:rgba(245,246,247,.66); --rule:rgba(255,255,255,.12); --accent:#7c8cff; --card:#0e1116; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:26rem; margin:0 auto; padding:3.5rem 1.25rem 4rem; }
+  h1 { font-size:1.6rem; line-height:1.2; margin:0 0 .4rem; letter-spacing:-.02em; }
+  p { color:var(--ink2); margin:0 0 .9rem; }
+  strong { color:var(--ink); font-weight:600; }
+  a { color:var(--accent); }
+  .code { background:var(--card); border:1px solid var(--rule); border-radius:8px;
+          padding:1.1rem 1rem; margin:1.6rem 0; text-align:center; }
+  .code b { display:block; font-size:2rem; letter-spacing:.22em; font-weight:600;
+            font-variant-numeric:tabular-nums; color:var(--ink); }
+  .code span { display:block; font-size:.85rem; color:var(--ink2); margin-top:.35rem; }
+  .open { display:block; text-align:center; text-decoration:none; font-weight:600;
+          background:var(--accent); color:#fff; border-radius:8px; padding:.9rem 1rem; margin:0 0 1.6rem; }
+  .note { border-top:1px solid var(--rule); padding-top:1.25rem; font-size:.92rem; }
+  footer { margin-top:2.5rem; font-size:.85rem; color:var(--ink2); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>You have been invited to a trip</h1>
+<p>OMW shows everyone travelling to one place where the others are, so nobody has to send
+&ldquo;where are you?&rdquo;.</p>
+
+<!-- Filled from the link. Absent is a state, not a blank: with no code the block says so. -->
+<div class="code">
+  <b id="code">&mdash;</b>
+  <span id="codeNote">No code in this link</span>
+</div>
+
+<a class="open" id="open" href="#">Open in OMW</a>
+
+<div class="note">
+  <p><strong>Don&rsquo;t have OMW yet?</strong> It is not on the App Store &mdash; OMW is in
+  private testing, so it is invitation-only for now. Ask whoever sent you this link to add you,
+  or write to <a href="mailto:aakasalabs@gmail.com">aakasalabs@gmail.com</a>.</p>
+  <p>Already have it? Open OMW, choose <strong>Join with a code</strong> and type the code above.</p>
+</div>
+
+<footer>
+  <a href="/">Support</a> &middot; <a href="/privacy.html">Privacy</a>
+</footer>
+
+</main>
+<script>
+  /* The code arrives as ?c=ABC234, and a pasted link may carry it as #ABC234 instead.
+     Same rule as the app's own parseCode: take the tail, keep A–Z and 0–9, six characters. */
+  (function () {
+    var raw = new URLSearchParams(location.search).get('c') || location.hash || '';
+    var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    var open = document.getElementById('open');
+    if (code.length !== 6) {
+      /* No code means there is nothing to open, and a button that cannot work is a false claim. */
+      open.style.display = 'none';
+      return;
+    }
+    document.getElementById('code').textContent = code;
+    document.getElementById('codeNote').textContent = 'Your invite code';
+    open.href = 'omw://join/' + code;
+  })();
+</script>
+</body>
+</html>

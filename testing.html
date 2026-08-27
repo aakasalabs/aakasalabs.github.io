@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OMW — Testing</title>
+<style>
+  :root { --bg:#ffffff; --ink:#14161d; --ink2:#4a4d5c; --rule:rgba(20,22,29,.12); --accent:#4d5ce0; --card:#f6f6f9; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#05060a; --ink:#f5f6f7; --ink2:rgba(245,246,247,.66); --rule:rgba(255,255,255,.12); --accent:#7c8cff; --card:#0e1116; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:44rem; margin:0 auto; padding:3rem 1.25rem 5rem; }
+  h1 { font-size:1.9rem; line-height:1.15; margin:0 0 .35rem; letter-spacing:-.02em; }
+  h2 { font-size:1.12rem; margin:2.4rem 0 .6rem; letter-spacing:-.01em; }
+  h3 { font-size:1rem; margin:1.4rem 0 .3rem; }
+  p, li { color:var(--ink2); }
+  p { margin:0 0 .9rem; }
+  .lede { font-size:1.05rem; margin-bottom:2rem; }
+  strong { color:var(--ink); font-weight:600; }
+  a { color:var(--accent); }
+  .contact { background:var(--card); border:1px solid var(--rule); border-radius:6px; padding:1.1rem 1.25rem; margin:1.5rem 0; }
+  .contact p { margin:0; }
+  footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--rule); font-size:.9rem; color:var(--ink2); }
+
+  ol li, ul li { margin:.3rem 0; }
+  .warn { background:var(--card); border:1px solid var(--rule); border-left:3px solid var(--accent);
+          border-radius:6px; padding:1.1rem 1.25rem; margin:1.5rem 0; }
+  .warn p { margin:0; }
+</style>
+</head>
+<body>
+<main>
+
+<h1>Testing OMW</h1>
+<p class="lede">Thank you for trying this. OMW shows everyone travelling to one place where the
+others are, so nobody has to send &ldquo;where are you?&rdquo;. It is not finished, and the point
+of you being here is to find out where it falls over.</p>
+
+<div class="warn">
+  <p><strong>It needs two people.</strong> One person alone sees an empty map and learns nothing.
+  Before you judge it, arrange to go somewhere with someone else who also has it &mdash; even a
+  ten-minute drive to a supermarket is enough.</p>
+</div>
+
+<h2>Getting it</h2>
+<ol>
+  <li>Install <strong>TestFlight</strong> from the App Store.</li>
+  <li>Open the invitation you were sent and accept it.</li>
+  <li>Install OMW from TestFlight and open it.</li>
+</ol>
+<p>iPhone only for now. There is no Android build yet.</p>
+
+<h2>Signing in</h2>
+<p>Enter your email and you get a <strong>six-digit code</strong> &mdash; there is no password.
+The first one often lands in spam; mark it as not spam so later ones do not. Then set your first
+and last name.</p>
+
+<h2>What to try</h2>
+<ol>
+  <li>Read the <strong>First things first</strong> page. Tell us if anything on it is unclear or
+  feels like it is asking for too much.</li>
+  <li>One of you starts a trip and shares the code. The other joins with it.</li>
+  <li>Say <strong>Yes</strong> when asked whether you are coming, then press Start.</li>
+  <li><strong>Actually travel</strong>, with the app in your pocket and your usual maps app on
+  screen, while the other person watches.</li>
+  <li>Stop somewhere for a few minutes on the way. Then carry on.</li>
+</ol>
+
+<h2>What we most want to know</h2>
+<ul>
+  <li>Did anyone appear stuck, stale or &ldquo;contact lost&rdquo; while their phone was clearly
+  fine? This is the most important thing on the list.</li>
+  <li>Was an arrival time ever wrong enough that you would have phoned someone anyway?</li>
+  <li>Did sharing stop by itself when you arrived?</li>
+  <li>Was there any moment you did not know what the app was telling you?</li>
+</ul>
+
+<h2>Known, and not worth reporting</h2>
+<ul>
+  <li>Android does not exist yet.</li>
+  <li>Notifications other than &ldquo;time to leave&rdquo; are not delivered.</li>
+  <li>A shared link does not open the app for someone who has not installed it &mdash; use the
+  typed code.</li>
+  <li>If iOS closes OMW in the background, sharing stops until you reopen it.</li>
+</ul>
+
+<h2>How to report something</h2>
+<p><strong>For behaviour</strong> &mdash; anything about position, timing or a wrong state &mdash;
+use <strong>Settings &rarr; Feedback</strong> in the app. It sends your words along with what your
+device actually did: which build, which positions it sent and when, and any crash from the
+previous session. You see all of it before it goes. That trail is usually what makes a report
+fixable, so this route is much more useful than a message.</p>
+<p><strong>For anything you can see</strong> &mdash; a layout problem, wrong wording, something
+ugly &mdash; take a screenshot, tap <strong>Share</strong>, and choose <strong>Send Beta
+Feedback</strong>. That reaches us with your device and build attached.</p>
+<p>Either way, what you were doing at the time is worth more than what you thought was wrong.</p>
+
+<h2>What we can see</h2>
+<p>While a ride is running, your position goes to the people on that ride and nobody else. It is
+never sold and never used for advertising. Every coordinate is erased an hour after the last
+person arrives &mdash; what stays is who came and when. Full detail is in the
+<a href="./privacy.html">privacy policy</a>.</p>
+<p>Sharing only happens while a ride you started is running. There is no ride running by default,
+and there is nothing to turn off between them.</p>
+
+<footer>
+  Questions, or something you would rather say directly:
+  <a href="mailto:aakasalabs@gmail.com">aakasalabs@gmail.com</a> &middot;
+  <a href="./">Support</a> &middot; <a href="./privacy.html">Privacy</a>
+</footer>
+
+</main>
+</body>
+</html>
