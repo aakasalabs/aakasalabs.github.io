@@ -3,7 +3,11 @@
     "details": [
       {
         "appIDs": ["WWSJ53D2A6.com.aakasalabs.omw2"],
-        "components": [{ "/": "/j/*", "comment": "an invite" }]
+        "components": [
+          { "/": "/j", "comment": "an invite, with no trailing slash" },
+          { "/": "/j/", "comment": "an invite — the form inviteLink builds" },
+          { "/": "/j/*", "comment": "any invite path below it" }
+        ]
       }
     ]
   },
