@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aakasalabs.anyminute",
+      "sha256_cert_fingerprints": [
+        "72:19:34:68:28:B4:99:51:F5:5C:C7:28:F3:5E:AE:E3:FD:F6:8D:76:05:06:40:1C:79:80:61:A5:2A:6E:0F:90"
+      ]
+    }
+  }
+]

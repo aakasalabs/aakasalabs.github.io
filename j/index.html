@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OMW — Join a trip</title>
+<title>Any Minute — Join a trip</title>
 <style>
   :root { --bg:#ffffff; --ink:#14161d; --ink2:#4a4d5c; --rule:rgba(20,22,29,.12); --accent:#4d5ce0; --card:#f6f6f9; }
   @media (prefers-color-scheme: dark) {
@@ -32,7 +32,7 @@
 <main>
 
 <h1>You have been invited to a trip</h1>
-<p>OMW shows everyone travelling to one place where the others are, so nobody has to send
+<p>Any Minute shows everyone travelling to one place where the others are, so nobody has to send
 &ldquo;where are you?&rdquo;.</p>
 
 <!-- Filled from the link. Absent is a state, not a blank: with no code the block says so. -->
@@ -41,13 +41,13 @@
   <span id="codeNote">No code in this link</span>
 </div>
 
-<a class="open" id="open" href="#">Open in OMW</a>
+<a class="open" id="open" href="#">Open in Any Minute</a>
 
 <div class="note">
-  <p><strong>Don&rsquo;t have OMW yet?</strong> It is not on the App Store &mdash; OMW is in
+  <p><strong>Don&rsquo;t have Any Minute yet?</strong> It is not on the App Store &mdash; Any Minute is in
   private testing, so it is invitation-only for now. Ask whoever sent you this link to add you,
   or write to <a href="mailto:aakasalabs@gmail.com">aakasalabs@gmail.com</a>.</p>
-  <p>Already have it? Open OMW, choose <strong>Join with a code</strong> and type the code above.</p>
+  <p>Already have it? Tap <strong>Open in Any Minute</strong> above.</p>
 </div>
 
 <footer>
@@ -69,7 +69,7 @@
     }
     document.getElementById('code').textContent = code;
     document.getElementById('codeNote').textContent = 'Your invite code';
-    open.href = 'omw://join/' + code;
+    open.href = 'anyminute://join/' + code;
   })();
 </script>
 </body>
