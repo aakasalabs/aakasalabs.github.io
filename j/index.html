@@ -1,76 +1,29 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Any Minute — Join a trip</title>
-<style>
-  :root { --bg:#ffffff; --ink:#14161d; --ink2:#4a4d5c; --rule:rgba(20,22,29,.12); --accent:#4d5ce0; --card:#f6f6f9; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#05060a; --ink:#f5f6f7; --ink2:rgba(245,246,247,.66); --rule:rgba(255,255,255,.12); --accent:#7c8cff; --card:#0e1116; }
-  }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink);
-         font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:26rem; margin:0 auto; padding:3.5rem 1.25rem 4rem; }
-  h1 { font-size:1.6rem; line-height:1.2; margin:0 0 .4rem; letter-spacing:-.02em; }
-  p { color:var(--ink2); margin:0 0 .9rem; }
-  strong { color:var(--ink); font-weight:600; }
-  a { color:var(--accent); }
-  .code { background:var(--card); border:1px solid var(--rule); border-radius:8px;
-          padding:1.1rem 1rem; margin:1.6rem 0; text-align:center; }
-  .code b { display:block; font-size:2rem; letter-spacing:.22em; font-weight:600;
-            font-variant-numeric:tabular-nums; color:var(--ink); }
-  .code span { display:block; font-size:.85rem; color:var(--ink2); margin-top:.35rem; }
-  .open { display:block; text-align:center; text-decoration:none; font-weight:600;
-          background:var(--accent); color:#fff; border-radius:8px; padding:.9rem 1rem; margin:0 0 1.6rem; }
-  .note { border-top:1px solid var(--rule); padding-top:1.25rem; font-size:.92rem; }
-  footer { margin-top:2.5rem; font-size:.85rem; color:var(--ink2); }
-</style>
-</head>
-<body>
-<main>
-
-<h1>You have been invited to a trip</h1>
-<p>Any Minute shows everyone travelling to one place where the others are, so nobody has to send
-&ldquo;where are you?&rdquo;.</p>
-
-<!-- Filled from the link. Absent is a state, not a blank: with no code the block says so. -->
-<div class="code">
-  <b id="code">&mdash;</b>
-  <span id="codeNote">No code in this link</span>
-</div>
-
-<a class="open" id="open" href="#">Open in Any Minute</a>
-
-<div class="note">
-  <p><strong>Don&rsquo;t have Any Minute yet?</strong> It is not on the App Store &mdash; Any Minute is in
-  private testing, so it is invitation-only for now. Ask whoever sent you this link to add you,
-  or write to <a href="mailto:aakasalabs@gmail.com">aakasalabs@gmail.com</a>.</p>
-  <p>Already have it? Tap <strong>Open in Any Minute</strong> above.</p>
-</div>
-
-<footer>
-  <a href="/">Support</a> &middot; <a href="/privacy.html">Privacy</a>
-</footer>
-
-</main>
-<script>
-  /* The code arrives as ?c=ABC234, and a pasted link may carry it as #ABC234 instead.
-     Same rule as the app's own parseCode: take the tail, keep A–Z and 0–9, six characters. */
-  (function () {
-    var raw = new URLSearchParams(location.search).get('c') || location.hash || '';
-    var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '');
-    var open = document.getElementById('open');
-    if (code.length !== 6) {
-      /* No code means there is nothing to open, and a button that cannot work is a false claim. */
-      open.style.display = 'none';
-      return;
-    }
-    document.getElementById('code').textContent = code;
-    document.getElementById('codeNote').textContent = 'Your invite code';
-    open.href = 'anyminute://join/' + code;
-  })();
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You're invited · Any Minute</title>
+    <meta name="description" content="Someone invited you to a trip on Any Minute." />
+    <meta property="og:title" content="You're invited · Any Minute" />
+    <meta property="og:description" content="Someone invited you to a trip on Any Minute." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://anyminute.app/img/icon.png" />
+    <meta name="theme-color" content="#05060a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/img/icon.png" />
+    <script>
+      (function () {
+        var m = window.matchMedia('(prefers-color-scheme: dark)');
+        var set = function () { document.documentElement.classList.toggle('dark', m.matches); };
+        set(); m.addEventListener('change', set);
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/entry-client-Cp97Wl8j.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/entry-client-CMe8nNb8.css">
+  </head>
+  <body data-page="join">
+    <div id="root"><link rel="preload" as="image" href="/img/icon.png"/><div class="flex min-h-svh flex-col"><header class="sticky top-0 z-50 transition-colors duration-300 border-b border-transparent"><div class="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 flex h-16 items-center justify-between"><a href="/" class="flex min-h-11 items-center gap-2.5 font-semibold tracking-tight"><img src="/img/icon.png" alt="" class="size-8 rounded-[9px] ring-1 ring-black/5 dark:ring-white/10"/><span>Any Minute</span></a><nav class="hidden items-center gap-1 md:flex"><a href="/#how" class="group flex h-11 items-center text-sm transition-colors hover:text-foreground text-muted-foreground"><span class="rounded-full px-3 py-1.5">How it works</span></a><a href="/#privacy" class="group flex h-11 items-center text-sm transition-colors hover:text-foreground text-muted-foreground"><span class="rounded-full px-3 py-1.5">Privacy</span></a><a href="/#faq" class="group flex h-11 items-center text-sm transition-colors hover:text-foreground text-muted-foreground"><span class="rounded-full px-3 py-1.5">FAQ</span></a><a href="/#contact" class="group flex h-11 items-center text-sm transition-colors hover:text-foreground text-muted-foreground"><span class="rounded-full px-3 py-1.5">Contact</span></a></nav><div class="flex items-center gap-2"><a href="/#contact" data-slot="button" data-variant="default" data-size="default" class="group/button shrink-0 items-center justify-center border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-4 bg-primary text-primary-foreground hover:bg-primary/80 gap-1.5 has-data-[icon=inline-end]:pr-2 has-data-[icon=inline-start]:pl-2 hidden h-11 rounded-full px-5 sm:inline-flex">Join the beta</a><button data-slot="button" data-variant="ghost" data-size="icon" class="group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50 -mr-2.5 size-11 md:hidden [&amp;_svg:not([class*=&#x27;size-&#x27;])]:size-5" aria-label="Open menu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div></div></header><main class="flex-1"><section class="relative overflow-hidden"><div class="pointer-events-none absolute top-[-30%] left-1/2 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-brand/15 blur-[120px]"></div><div class="mx-auto w-full px-10 sm:px-6 lg:px-8 max-w-xl pt-12 pb-16 text-center sm:pt-20 sm:pb-28"><p class="text-sm font-medium tracking-wide text-brand">You’re invited</p><h1 class="mt-3 text-[2rem] leading-tight font-semibold sm:mt-4 tracking-tight text-balance sm:text-5xl">Someone wants you on their trip.</h1><p class="mt-4 text-base leading-relaxed sm:mt-5 sm:text-lg text-muted-foreground">Any Minute shows everyone heading to the same place where the others are, so nobody has to send “where are you?”.</p><div data-slot="card" data-size="default" class="group/card flex flex-col gap-(--card-spacing) overflow-hidden bg-card text-sm text-card-foreground ring-1 ring-foreground/10 [--card-spacing:--spacing(4)] has-data-[slot=card-footer]:pb-0 has-[&gt;img:first-child]:pt-0 data-[size=sm]:[--card-spacing:--spacing(3)] data-[size=sm]:has-data-[slot=card-footer]:pb-0 *:[img:first-child]:rounded-t-xl *:[img:last-child]:rounded-b-xl -mx-5 sm:mx-0 mt-8 rounded-3xl py-0 text-left shadow-lg sm:mt-10"><div data-slot="card-content" class="space-y-5 p-5 sm:space-y-6 sm:p-7"><div><p class="font-medium">This link has no invite code.</p><p class="mt-1 text-sm text-muted-foreground">Ask whoever sent it for the full link.</p></div><div class="flex gap-3 border-t pt-5 sm:pt-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smartphone mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"></rect><path d="M12 18h.01"></path></svg><p class="text-sm leading-relaxed text-muted-foreground"><span class="font-medium text-foreground">Don’t have Any Minute yet?</span> It’s in private beta, so it’s invitation-only for now. Ask whoever sent this link to add you, or<!-- --> <a href="#contact" class="text-brand underline-offset-4 hover:underline">request access</a>.</p></div></div></div></div></section></main><footer class="border-t"><div class="mx-auto w-full max-w-6xl px-10 sm:px-6 lg:px-8 grid grid-cols-2 gap-x-6 gap-y-8 py-12 sm:grid-cols-3 sm:py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-10"><div class="col-span-2 space-y-2 sm:col-span-3 md:col-span-1"><a href="/" class="flex min-h-11 items-center gap-2.5 font-semibold tracking-tight"><img src="/img/icon.png" alt="" class="size-8 rounded-[9px] ring-1 ring-black/5 dark:ring-white/10"/><span>Any Minute</span></a><p class="max-w-xs text-sm leading-relaxed text-muted-foreground">Live arrival times for everyone heading to the same place. Made by Aakasa Labs.</p></div><div class="space-y-1"><h3 class="text-sm font-medium">Product</h3><ul><li><a href="/#how" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">How it works</a></li><li><a href="/#faq" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">FAQ</a></li></ul></div><div class="space-y-1"><h3 class="text-sm font-medium">Trust</h3><ul><li><a href="/#privacy" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">Privacy at a glance</a></li><li><a href="/privacy.html" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">Privacy policy</a></li></ul></div><div class="space-y-1"><h3 class="text-sm font-medium">Beta</h3><ul><li><a href="/testing.html" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">Tester guide</a></li><li><a href="/#contact" class="flex min-h-11 items-center text-sm text-muted-foreground transition-colors hover:text-foreground">Contact</a></li></ul></div></div><div class="border-t"><div class="mx-auto w-full max-w-6xl px-10 sm:px-6 lg:px-8 flex flex-col gap-2 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© <!-- -->2026<!-- --> Aakasa Labs. All rights reserved.</span><span>No ads. No tracking. Your location is deleted after every trip.</span><a href="https://www.openstreetmap.org/copyright" class="inline-flex min-h-11 items-center hover:text-foreground">Map data © OpenStreetMap contributors</a></div></div></footer></div></div>
+  </body>
 </html>

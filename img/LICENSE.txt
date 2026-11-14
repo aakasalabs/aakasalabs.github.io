@@ -1,0 +1,5 @@
+griffith-map.svg, griffith-drive.svg: map data (c) OpenStreetMap contributors, Open Database License 1.0.
+https://www.openstreetmap.org/copyright — drawn by web/scripts/griffith-map.mjs.
+
+car3d-paint.png, car3d-over.png: frame 00 of assets/car3d/car-*, rendered from Car Kit 3.1 by Kenney (kenney.nl), CC0.
+car-0..3.png, icon.png, splash-icon.png: the app's own assets.
