@@ -6,7 +6,10 @@
         "components": [
           { "/": "/j", "comment": "an invite, with no trailing slash" },
           { "/": "/j/", "comment": "an invite — the form inviteLink builds" },
-          { "/": "/j/*", "comment": "any invite path below it" }
+          { "/": "/j/*", "comment": "any invite path below it" },
+          { "/": "/u", "comment": "one person, to add as a friend" },
+          { "/": "/u/", "comment": "the form profileLink builds" },
+          { "/": "/u/*", "comment": "any profile path below it" }
         ]
       }
     ]
